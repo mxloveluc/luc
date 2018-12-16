@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my1.dao.TestMySqlMapper">
+	
+	<insert id="insertLine" parameterType="com.my1.model.TestSql">
+		insert into crm_test(
+			test_id,
+			test_time,
+			test_int,
+			test_str
+		)values(
+			#{testId},
+			#{testTime},
+			#{testInt},
+			#{testStr}
+		)
+	</insert>	
+	
+	<select id="selectData" parameterType="java.util.Map" resultType="com.my1.model.TestSql">
+		select
+			test_id as testId,
+			test_time as testTime,
+			test_int as testInt,
+			test_str as testStr
+		from crm_test
+	</select>
+</mapper>
